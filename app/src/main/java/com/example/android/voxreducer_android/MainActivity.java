@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    // Used to load the 'native-lib' library on application startup.
+    // Used to load the 'reducer' library on application startup.
     static {
         System.loadLibrary("reducer");
     }
@@ -48,7 +48,11 @@ public class MainActivity extends AppCompatActivity {
     //create reducer
     public static native boolean createReducer();
 
+    //TODO: Add all the required functions from native-audio sample code
     //audio player
+    public static native void createEngine();
+    public static native void createBufferQueueAudioPlayer(int sampleRate, int samplesPerBuf);
+
     public static native boolean createAssetAudioPlayer(AssetManager assetManager, String filename);
     public static native void setPlayingAssetAudioPlayer(boolean isPlaying);
 
