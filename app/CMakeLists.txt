@@ -5,13 +5,15 @@
 
 cmake_minimum_required(VERSION 3.4.1)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -Werror")
+
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
 
 add_library(reducer SHARED
-              src/main/cpp/audio_main.cpp
+              ../../../iOS_Projects/Static_Libraries/common_dsp/common_dsp/audio_main.cpp
               ../../../iOS_Projects/Static_Libraries/common_dsp/common_dsp/filt.h
               ../../../iOS_Projects/Static_Libraries/common_dsp/common_dsp/filt.cpp
               ../../../iOS_Projects/Static_Libraries/common_dsp/common_dsp/center_reducer.h
