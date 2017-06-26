@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Filter;
 import android.widget.TextView;
 import android.content.res.AssetManager;
@@ -42,11 +43,12 @@ public class MainActivity extends AppCompatActivity {
 
         if(createReducer()){
             //reducer ready
+            Log.d("tag","create reducer......");
 
             //create audio player
             //TODO: add .wav audio resource
             String  mp3 = "background.mp3";
-            String wav = "mindcontrol.wav";
+            String wav = "hostile_long.wav";
             boolean created = createAssetAudioPlayer(assetManager, wav);
 
             //play audio
