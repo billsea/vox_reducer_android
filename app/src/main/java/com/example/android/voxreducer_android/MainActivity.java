@@ -5,6 +5,8 @@ import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.TextView;
 import android.content.res.AssetManager;
@@ -51,13 +53,28 @@ public class MainActivity extends AppCompatActivity {
             String wav = "hostile_long.wav";
             boolean created = createAssetAudioPlayer(assetManager, wav);
 
-            //play audio
             setPlayingAssetAudioPlayer(true);
         }
 
         // Example of a call to a native method
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText(stringFromJNI());
+
+        ((Button) findViewById(R.id.start_button)).setOnClickListener(new View.OnClickListener() {
+            boolean created = false;
+            public void onClick(View view) {
+                //play audio
+                setPlayingAssetAudioPlayer(true);
+            }
+        });
+
+        ((Button) findViewById(R.id.stop_button)).setOnClickListener(new View.OnClickListener() {
+            boolean created = false;
+            public void onClick(View view) {
+                //play audio
+                setPlayingAssetAudioPlayer(false);
+            }
+        });
 
     }
 
